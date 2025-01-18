@@ -4,26 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPNow | Instant IP, Location & Network Details</title>
+  <title>IPNow | Instant IP Location & Network Details</title>
+  <!-- Adding favicon links for different devices and browsers -->
   <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <!-- Including external CSS libraries for Bootstrap and Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Link to custom CSS for styling -->
   <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
   <div class="container">
     <div class="card professional-card">
+      <!-- Card Header with the logo of IPNow -->
       <div class="card-header" style="background-color: #0b0c10; padding: 10px; text-align: center;">
         <img src="/static/images/ipnow_logo.png" alt="IPNow Logo"
           style="height: 40px; filter: brightness(0) invert(1);">
       </div>
       <hr>
+      <!-- Welcome section displaying the IP address -->
       <div class="welcome-section">
         <h4>Welcome, <span style="color: #66fcf1;">{{ ipdata['ip'] }}</span></h4>
         <p>Explore your IP Address, Location, and Network Details.</p>
@@ -31,14 +36,17 @@
 
       <div class="card-body">
         {% if ipdata %}
+        <!-- Check if ipdata exists and render the details -->
         <div class="row">
           <div class="col-md-6">
+            <!-- Display IP Address Information -->
             <div class="info-card">
               <i class="fas fa-laptop-house"></i>
               <div class="info-text">
                 <h5>IP Address</h5>
                 <div class="d-flex justify-content-between align-items-center">
                   <p id="ipAddress">{{ ipdata['ip'] }}</p>
+                  <!-- Button to copy the IP Address to clipboard -->
                   <button class="btn" onclick="copyIP()">
                     <i class="fas fa-clipboard"></i>
                   </button>
@@ -47,6 +55,7 @@
               </div>
             </div>
 
+            <!-- Display Location Information -->
             <div class="info-card">
               <i class="fas fa-map-marker-alt"></i>
               <div class="info-text">
@@ -55,6 +64,7 @@
               </div>
             </div>
 
+            <!-- Display ISP Information -->
             <div class="info-card">
               <i class="fas fa-network-wired"></i>
               <div class="info-text">
@@ -63,6 +73,7 @@
               </div>
             </div>
 
+            <!-- Display Timezone Information -->
             <div class="info-card">
               <i class="fas fa-clock"></i>
               <div class="info-text">
@@ -72,6 +83,7 @@
             </div>
           </div>
 
+          <!-- Display Map with the Location's Latitude and Longitude -->
           <div class="col-md-6">
             <div class="map-container">
               <iframe src="https://maps.google.com/maps?q={{ ipdata['latitude'] }},{{ ipdata['longitude'] }}&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
@@ -79,6 +91,7 @@
           </div>
         </div>
         {% else %}
+        <!-- If ipdata is not available, show an error message -->
         <h3>Oops! We Couldn't Fetch Your Details</h3>
         <p>Something went wrong while fetching your IP and location information. Please try again later.</p>
         <button onclick="window.location.reload()" class="btn btn-primary">
@@ -88,6 +101,7 @@
 
       </div>
 
+      <!-- Footer with developer signature -->
       <div class="signature">
         <p>© Copy Right
           <script>
@@ -99,6 +113,7 @@
     </div>
   </div>
 
+  <!-- External JS files for functionality -->
   <script src="/static/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
