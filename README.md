@@ -1,6 +1,6 @@
 # IPNow - Instant IP, Location & Network Details
 
-![IPNow Logo](https://ipnow.rajayadav.in/static/images/ipnow_logo.png)
+![IPNow Logo](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fk89y8fxtnz7vqci8sojd.png)
 
 ### Preview: [ipnow.rajayadav.in](http://ipnow.rajayadav.in)
 
